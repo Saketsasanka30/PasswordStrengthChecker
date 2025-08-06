@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  color: #00ffcc;
+  overflow: hidden;
+}
+
+#matrix-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+  background: black;
+}
+
+.container {
+  background: rgba(10, 10, 10, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  width: 420px;
+  margin: auto;
+  margin-top: 60px;
+  text-align: center;
+  border: 2px solid #00ffcc;
+  box-shadow: 0 0 30px #00ffaa;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+h1 {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #00ffaa, 0 0 20px #00ffaa;
+}
+
+/* Input Box */
+.input-box {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  background: black;
+  border: 2px solid #00ffcc;
+  border-radius: 8px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  background: black;
+  color: #00ffcc;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+#togglePassword {
+  padding: 12px;
+  cursor: pointer;
+  color: #00ffcc;
+}
+
+/* Strength Bar */
+#strengthBar {
+  height: 15px;
+  width: 100%;
+  background: #111;
+  border-radius: 8px;
+  margin: 15px 0;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 0 10px #00ffaa;
+}
+
+#strengthBar::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background: red;
+  transition: width 0.6s ease, background 0.6s ease;
+  box-shadow: 0 0 15px currentColor;
+}
+
+#strengthLabel {
+  position: absolute;
+  top: -22px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #00ffcc;
+}
+
+/* Breach Alert */
+#strengthBar.breached {
+  animation: flashRed 1s infinite alternate;
+}
+
+@keyframes flashRed {
+  from { box-shadow: 0 0 10px red; }
+  to { box-shadow: 0 0 25px crimson; }
+}
+
+/* Console Log */
+#console {
+  background: black;
+  border: 1px solid #00ffcc;
+  padding: 10px;
+  height: 120px;
+  margin: 15px 0;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 13px;
+  color: #00ffaa;
+}
+
+.log {
+  margin: 3px 0;
+  animation: typing 1.5s steps(30, end);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Checklist */
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+ul li {
+  margin: 5px 0;
+  transition: color 0.3s, transform 0.3s;
+}
+
+ul li.glow {
+  color: lime;
+  transform: scale(1.05);
+  text-shadow: 0 0 8px lime;
+}
+
+/* Buttons */
+button {
+  margin-top: 10px;
+  background: #00ffcc;
+  color: black;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #00ffaa;
+}

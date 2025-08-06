@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Password Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="matrix-bg"></canvas>
+  
+  <div class="container">
+    <h1>🛡 Cyber Password Analyzer</h1>
+
+    <div class="input-box">
+      <input type="password" id="password" placeholder="Enter your password...">
+      <span id="togglePassword">👁</span>
+    </div>
+
+    <div id="strengthBar"><span id="strengthLabel">Awaiting input...</span></div>
+    <p id="crackTime">⌛ Crack Time: --</p>
+
+    <div id="console">
+      <p class="log">> System ready. Awaiting input...</p>
+    </div>
+
+    <h3>Requirements Checklist</h3>
+    <ul id="requirements">
+      <li id="lengthReq">❌ At least 8 characters</li>
+      <li id="upperReq">❌ At least 1 uppercase</li>
+      <li id="numReq">❌ At least 1 number</li>
+      <li id="specialReq">❌ At least 1 special character</li>
+    </ul>
+
+    <button id="copyBtn">📋 Copy Password</button>
+    <button id="suggestBtn">⚡ Generate Strong Password</button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
